@@ -87,4 +87,19 @@ GlobalData(){
 		this.productTypeCount=p;
 	}
 	
+	
+	public void PrintAllData()
+	{
+		System.out.println("rows: " + rows+ "\t columns:" + columns);
+		System.out.println("MaxDroneLoad:  " + droneMaxLoad);
+		System.out.println("Turns: " + turnsCount);
+		System.out.println("ProductTypesCount: " + productTypeCount);
+		System.out.println("Turns: " + turnsCount);
+		System.out.println("WarehousesCount: " + warehousesCount);
+		System.out.println("DroneCount: " + droneCount);
+		System.out.println("OrdersCount: " + ordersCount);
+		
+		
+	}
+	
 }
