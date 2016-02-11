@@ -23,6 +23,15 @@ public class Drone {
 		
 	}
 	
+	public int getID(){
+		return ID;
+	}
+
+	public void setID(int id){
+		this.ID=id;
+	}
+	
+	private int ID;
 	private int maxweight;
 	ArrayList<Product> load;
 }
