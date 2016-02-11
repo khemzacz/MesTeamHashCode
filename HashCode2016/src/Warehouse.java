@@ -12,7 +12,7 @@ public class Warehouse {
 		this.ID = ID;
 
 		availableProducts = new LinkedList<>();
-		for (int i=0; i < GlobalData.productTypeSize; ++i)
+		for (int i=0; i < GlobalData.getProductTypeCount(); ++i)
 			availableProducts.add(0);
 	}
 
