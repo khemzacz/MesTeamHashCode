@@ -19,6 +19,8 @@ public void setID(int id){
 
 
 
+
+
 private int ID;	
 private Coordinates cord;
 }
