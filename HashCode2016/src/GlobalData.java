@@ -21,6 +21,7 @@ GlobalData(){
 	private int ordersCount;
 	public ArrayList<Order> orderList;
 	
+	public ArrayList<Product> productType;
 
 	public int getRows(){
 		return rows;
