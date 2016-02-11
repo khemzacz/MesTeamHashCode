@@ -1,10 +1,13 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class test {
+	private static GlobalData global;
 
 	public static void main(String[] args) {
+		global = new GlobalData();
 		readFromFile();
 		createWorld();
 		createOrderQueue();
@@ -34,31 +37,34 @@ public class test {
 
 		Scanner stringScanner = new Scanner(line);
 
-		row = stringScanner.nextInt();
-		columns = stringScanner.nextInt();
-		droneCount = stringScanner.nextInt();
-		turnsCount = stringScanner.nextInt();
-		droneMaxLoad = stringScanner.nextInt();
+		global.serRows(stringScanner.nextInt());
+		global.setColumns(stringScanner.nextInt());
+		global.setDroneCount(stringScanner.nextInt());
+		global.setTurns(stringScanner.nextInt());
+		global.setMaxLoad(stringScanner.nextInt());
 
 		stringScanner = new Scanner(scanner.nextLine());
-		productTypeCount = stringScanner.nextInt();
+		global.setProductTypeCount(stringScanner.nextInt());
 
 		stringScanner = new Scanner(scanner.nextLine());
 		int i = 0;
+		global.productType = new ArrayList<Product>();
 		while(stringScanner.hasNextInt()){
-			productType[i].weight = stringScanner.nextInt();
+			global.productType.add(new Product(i,stringScanner.nextInt()));
 			++i;
 		}
 
 		stringScanner = new Scanner(scanner.nextLine());
-		warehouseCount = stringScanner.nextInt();
+		global.setWarehouses(stringScanner.nextInt());
 
-		for (int w = 0; w < warehouseCount ; ++w) {
+		global.warehouseList = new ArrayList<Warehouse>();
+		for (int w = 0; w < global.getWarehouseCount() ; ++w) {
 			stringScanner = new Scanner(scanner.nextLine());
-			warehouse[w] = new Warehouse(new Coordinates(stringScanner.nextInt(), stringScanner.nextInt()), w);
-
+			global.warehouseList.add(new Warehouse(new Coordinates(stringScanner.nextInt(), stringScanner.nextInt()), w));
+			
 			stringScanner = new Scanner(scanner.nextLine());
-			for (int i=0; i<productTypeCount; ++i) {
+			for (i=0; i<global.getProductTypeCount(); ++i) {
+				global.warehouseList.se
 				warehouse[w].setcostamprodukt(stringScanner.nextInt(), i);
 			}
 
