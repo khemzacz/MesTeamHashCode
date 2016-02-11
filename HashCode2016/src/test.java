@@ -3,8 +3,10 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+
 public class test {
-	private static GlobalData global;
+	public static GlobalData global;
 
 	public static void main(String[] args) {
 		global = new GlobalData();
@@ -71,9 +73,9 @@ public class test {
 		}
 
 		stringScanner = new Scanner(scanner.nextLine());
-		orderCount = stringScanner.nextInt();
+		global.setOrdersCount(stringScanner.nextInt());
 
-		for (int o=0; o <orderCount; ++o) {
+		for (int o=0; o <global.getOrdersCount(); ++o) {
 
 			stringScanner = new Scanner(scanner.nextLine());
 			order[o].setDestination(stringScanner.nextInt(), stringScanner.nextInt());
