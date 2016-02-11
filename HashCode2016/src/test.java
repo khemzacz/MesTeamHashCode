@@ -12,24 +12,31 @@ public class test {
 		global = new GlobalData();
 		readFromFile();
 		global.PrintAllData();
-	//	createWorld();
-	//	createOrderQueue();
+		OrderQueue orderQueue = new OrderQueue();
 		
-	/*	for(int t=0; t<turn; ++t){
-			for(int d=0; d<droneList.length; ++d)
-				if(droneList(d).state == "BEZROBOTNY")
+		for(int t=0; t<global.getTurns(); ++t){
+			for(int d=0; d<global.getDroneCount(); ++d)
+				if(global.dronesList.get(d).state == DroneState.READY)
 					assignWorktoDrone();
-		} */
+		} 
 		
 	}
 	
 	private static void assignWorktoDrone() {
-	 /*	for(int o=0;o<orderList.length;++o){
-			if(orderList(o).state == "NOTSTARTED"){
+	 	for(int o=0;o<global.getOrdersCount();++o){
+			if(global.orderList.get(o).getState() == OrderState.PENDING){
 				commandDrone();
 				printCommand();
 			}
-		} */
+		} 
+	}
+	
+	private static void commandDrone(){
+		
+	}
+	
+	private static void printCommand(){
+		
 	}
 
 	private static void readFromFile() throws FileNotFoundException {
@@ -78,16 +85,15 @@ public class test {
 		for (int o=0; o <global.getOrdersCount(); ++o) {
 
 			stringScanner = new Scanner(scanner.nextLine());
-			global.orderList.add(new Order(new Coordinates(1,1)));
+			global.orderList.add(new Order(new Coordinates(stringScanner.nextInt(),stringScanner.nextInt())));
 
 			stringScanner = new Scanner(scanner.nextLine());
-			int orderCount = stringScanner.nextInt();
-
-
-			for (i=0 ; i < orderCount ; ++i) {
-				stringScanner = new Scanner(scanner.nextLine());
+			int orderProducts = stringScanner.nextInt();
+			
+			stringScanner = new Scanner(scanner.nextLine());
+			for (i=0 ; i < orderProducts ; ++i) {
 				//global.orderList.get(o).getProducts() = new ArrayList<Product>();
-				global.orderList.get(o).getProducts().add(new Product(global.productType.get(i)));
+				global.orderList.get(o).getProducts().add(new Product(global.productType.get(stringScanner.nextInt())));
 			}
 
 		}
