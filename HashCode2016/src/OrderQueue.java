@@ -8,33 +8,29 @@ import java.util.LinkedList;
  */
 public class OrderQueue {
 
-    private static GlobalData globalData;
     private int               orderCount;
     private ArrayList<Order> orderList;
 
     public OrderQueue() {
-        if (globalData == null)
-            System.out.println("ERROR, GLOBALDATA NOT INITIALIZED.");
-        System.out.println("jakubik to straszny pedal ;/");
 
-        orderCount = globalData.getOrdersCount();
+        orderCount = GlobalData.getOrdersCount();
         initializeOrderList();
-
     }
 
 
     private void initializeOrderList() {
         orderList = new ArrayList<>();
-        orderList = globalData.orderList;
+        orderList = GlobalData.orderList;
     }
 
 
-    public void getFirstPendingOrder(){
+    public Order getFirstPendingOrder() {
         for (int o=0; o < orderCount; ++o) {
-            
+            if (orderList.get(o).getState() == OrderState.PENDING)
+                return orderList.get(o);
         }
+        return null;
     }
-
 
 
 }
