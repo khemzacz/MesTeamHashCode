@@ -6,89 +6,89 @@ GlobalData(){
 	
 }
 	
-	private int rows;
-	private int columns;
-	private int droneMaxLoad;
-	private int turnsCount;
-	private int productTypeCount;
+	private static int rows;
+	private static int columns;
+	private static int droneMaxLoad;
+	private static int turnsCount;
+	private static int productTypeCount;
 	
-	private int warehousesCount;
-	public ArrayList<Warehouse> warehouseList;
+	private static int warehousesCount;
+	public static ArrayList<Warehouse> warehouseList;
 	
-	private int droneCount; 
-	public ArrayList<Drone> dronesList;
+	private static int droneCount; 
+	public static ArrayList<Drone> dronesList;
 	
-	private int ordersCount;
-	public ArrayList<Order> orderList;
+	private static int ordersCount;
+	public static ArrayList<Order> orderList;
 	
-	public ArrayList<Product> productType;
+	public static ArrayList<Product> productType;
 
-	public int getRows(){
+	public static int getRows(){
 		return rows;
 	}
 	
-	public int getMaxLoad(){
+	public static int getMaxLoad(){
 		return droneMaxLoad;
 	}
 	
-	public int getTurns(){
+	public static int getTurns(){
 		return turnsCount;
 	}
 	
-	public int getColumns(){
+	public static int getColumns(){
 		return columns;
 	}	
 	
-	public int getWarehouseCount(){
+	public static int getWarehouseCount(){
 		return warehousesCount;
 	}
 	
-	public int getDroneCount(){
+	public static int getDroneCount(){
 		return droneCount;
 	}
 	
-	public int getOrdersCount(){
+	public static int getOrdersCount(){
 		return ordersCount;
 	}
 	
-	public int getProductTypeCount(){
+	public static int getProductTypeCount(){
 		return productTypeCount;
 	}
 	
-	public void serRows(int r){
-		this.rows=r;
+	public static void setRows(int r){
+		rows=r;
 	}
 	
-	public void setMaxLoad(int m){
-		this.droneMaxLoad=m;
+	public static void setMaxLoad(int m){
+		droneMaxLoad=m;
 	}
 	
-	public void setColumns(int c){
-		this.columns=c;
+	public static void setColumns(int c){
+		columns=c;
 	}	
 	
-	public void setTurns(int t){
-		this.turnsCount=t;
+	public static void setTurns(int t){
+		turnsCount=t;
 	}
 	
-	public void setWarehouses(int w){
-		this.warehousesCount=w;
+	public static void setWarehouses(int w){
+		warehousesCount=w;
 	}
 	
-	public void setDroneCount(int c){
-		this.droneCount=c;
+	public static void setDroneCount(int c){
+		droneCount=c;
 	}
 	
-	public void setOrdersCount(int o){
-		this.ordersCount=0;
+	public static void setOrdersCount(int o){
+		ordersCount=0;
 	}
 	
-	public void setProductTypeCount(int p){
-		this.productTypeCount=p;
+	public static void setProductTypeCount(int p){
+		productTypeCount=p;
 	}
 	
 	
-	public void PrintAllData()
+	public static void PrintAllData()
 	{
 		System.out.println("rows: " + rows+ "\t columns:" + columns);
 		System.out.println("MaxDroneLoad:  " + droneMaxLoad);
