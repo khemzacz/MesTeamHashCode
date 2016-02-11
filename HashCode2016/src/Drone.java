@@ -34,4 +34,28 @@ public class Drone {
 	private int ID;
 	private int maxweight;
 	ArrayList<Product> load;
+
+	public DroneState getState() {
+		return state;
+	}
+
+	public void setState(DroneState state) {
+		this.state = state;
+	}
+
+	public int getMaxweight() {
+		return maxweight;
+	}
+
+	public void setMaxweight(int maxweight) {
+		this.maxweight = maxweight;
+	}
+
+	public ArrayList<Product> getLoad() {
+		return load;
+	}
+
+	public void setLoad(ArrayList<Product> load) {
+		this.load = load;
+	}
 }
