@@ -3,7 +3,10 @@ import java.util.ArrayList;
 public class GlobalData {
 
 GlobalData(){
-	
+	dronesList = new ArrayList<Drone>();
+	orderList = new ArrayList<Order>();
+	warehouseList = new ArrayList<Warehouse>();
+	productType = new ArrayList<Product>();
 }
 	
 	private static int rows;
@@ -80,7 +83,7 @@ GlobalData(){
 	}
 	
 	public static void setOrdersCount(int o){
-		ordersCount=0;
+		ordersCount=o;
 	}
 	
 	public static void setProductTypeCount(int p){

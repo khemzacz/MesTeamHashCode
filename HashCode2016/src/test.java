@@ -8,27 +8,28 @@ import java.util.Scanner;
 public class test {
 	public static GlobalData global;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		global = new GlobalData();
 		readFromFile();
-		createWorld();
-		createOrderQueue();
+		global.PrintAllData();
+	//	createWorld();
+	//	createOrderQueue();
 		
-		for(int t=0; t<turn; ++t){
+	/*	for(int t=0; t<turn; ++t){
 			for(int d=0; d<droneList.length; ++d)
 				if(droneList(d).state == "BEZROBOTNY")
 					assignWorktoDrone();
-		}
+		} */
 		
 	}
 	
 	private static void assignWorktoDrone() {
-		for(int o=0;o<orderList.length;++o){
+	 /*	for(int o=0;o<orderList.length;++o){
 			if(orderList(o).state == "NOTSTARTED"){
 				commandDrone();
 				printCommand();
 			}
-		}
+		} */
 	}
 
 	private static void readFromFile() throws FileNotFoundException {
@@ -39,7 +40,7 @@ public class test {
 
 		Scanner stringScanner = new Scanner(line);
 
-		global.serRows(stringScanner.nextInt());
+		global.setRows(stringScanner.nextInt());
 		global.setColumns(stringScanner.nextInt());
 		global.setDroneCount(stringScanner.nextInt());
 		global.setTurns(stringScanner.nextInt());
@@ -66,28 +67,27 @@ public class test {
 			
 			stringScanner = new Scanner(scanner.nextLine());
 			for (i=0; i<global.getProductTypeCount(); ++i) {
-				global.warehouseList.se
-				warehouse[w].setcostamprodukt(stringScanner.nextInt(), i);
+				global.warehouseList.get(w).setAvailableProductType(stringScanner.nextInt(), i);
 			}
 
 		}
 
 		stringScanner = new Scanner(scanner.nextLine());
 		global.setOrdersCount(stringScanner.nextInt());
-
+		global.orderList = new ArrayList<Order>();
 		for (int o=0; o <global.getOrdersCount(); ++o) {
 
 			stringScanner = new Scanner(scanner.nextLine());
-			order[o].setDestination(stringScanner.nextInt(), stringScanner.nextInt());
+			global.orderList.add(new Order(new Coordinates(1,1)));
 
 			stringScanner = new Scanner(scanner.nextLine());
-			order[o].setTotalProductCount(stringScanner.nextInt());
+			int orderCount = stringScanner.nextInt();
 
 
-			for (int i=0 ; i < orderCount ; ++i) {
+			for (i=0 ; i < orderCount ; ++i) {
 				stringScanner = new Scanner(scanner.nextLine());
-
-				order[o].addToListOfProducts(stringScanner.nextInt());
+				//global.orderList.get(o).getProducts() = new ArrayList<Product>();
+				global.orderList.get(o).getProducts().add(new Product(global.productType.get(i)));
 			}
 
 		}

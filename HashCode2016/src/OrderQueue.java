@@ -1,5 +1,3 @@
-import jdk.nashorn.internal.objects.Global;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 

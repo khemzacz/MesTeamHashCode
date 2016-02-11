@@ -6,6 +6,12 @@ Product(int ID, int weight){
 	setWeight(weight);
 	this.state = ProductState.UNDELIVERED;
 }
+Product(Product p){
+	setID(p.getID());
+	setWeight(p.getWeight());
+	this.state = p.state;
+}
+
 	
 public void setWeight(int weight){
 	this.weight=weight;
